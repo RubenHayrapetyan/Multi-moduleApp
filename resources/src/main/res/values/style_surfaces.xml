@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Card.Flat" parent="Widget.MaterialComponents.CardView">
+    <item name="cardElevation">0dp</item>
+    <item name="cardCornerRadius">@dimen/radius_card</item>
+    <item name="cardBackgroundColor">@color/secondary_variant</item>
+  </style>
+
+  <style name="Toolbar.Primary" parent="Widget.MaterialComponents.Toolbar">
+    <item name="android:background">@color/primary</item>
+  </style>
+
+  <style name="Toolbar.Secondary" parent="Widget.MaterialComponents.Toolbar">
+    <item name="android:background">@color/primary</item>
+  </style>
+
+  <style name="Content">
+    <item name="android:background">@color/content</item>
+  </style>
+
+  <style name="Content.Secondary">
+    <item name="android:background">@color/secondary</item>
+  </style>
+
+  <style name="Content.Tertiary">
+    <item name="android:background">@color/content_secondary</item>
+  </style>
+</resources>

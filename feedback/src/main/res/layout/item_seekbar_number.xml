@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Text.Label1"
+    android:textColor="@color/seekbar_number"
+    android:layout_width="@dimen/seekbar_number_width"
+    android:layout_height="@dimen/seekbar_number_height"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:id="@+id/tv_number"
+    tools:text="10" />

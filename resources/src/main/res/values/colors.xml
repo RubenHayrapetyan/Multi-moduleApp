@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="main_white">#FFFFFF</color>
+  <color name="main_text">#040404</color>
+  <color name="main_hint">#737373</color>
+  <color name="main_input_background">#BCBCBC</color>
+  <color name="search_icon_tint">#DADADA</color>
+  <color name="search_input_hint">#B5B5B5</color>
+  <color name="seekbar_number">#595959</color>
+  <color name="rate_status">#595959</color>
+
+
+  <!--  untranslated colors-->
+  <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
+  <color name="seekbar_progress_selected_color">#4DBA58</color>
+</resources>

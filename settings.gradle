@@ -1,0 +1,10 @@
+rootProject.name = "MultiModuleApp"
+include ':app'
+include ':resources'
+include ':components-data'
+include ':extensions'
+include ':components-ui'
+include ':location'
+include ':entity'
+include ':constants'
+include ':feedback'

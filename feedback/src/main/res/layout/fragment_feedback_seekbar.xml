@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <com.google.android.material.appbar.AppBarLayout
+      style="@style/Content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:elevation="0dp">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+        app:titleEnabled="false">
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:theme="@style/Feedback.Toolbar.Menu"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+          app:title="@string/title_ticket"
+          app:titleTextAppearance="@style/Text.Title.Small"
+          app:titleTextColor="@color/main_text" />
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.core.widget.NestedScrollView
+      style="@style/FeedbackContainerPaddings"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/main_white"
+      android:clipToPadding="false"
+      android:fillViewport="true"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:scaleType="fitXY"
+          android:src="@drawable/ic_torn"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_advice_business"
+          style="@style/Text.Label4"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/feedback_rate_text_margin"
+          android:gravity="center"
+          android:text="@string/text_advice_business"
+          android:textSize="@dimen/text_size_17"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <SeekBar
+          android:id="@+id/sb_rate"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/feedback_seekbar_margin"
+          android:max="10"
+          android:progressBackgroundTint="@color/seekbar_progress_unselected_color"
+          android:progressTint="@color/seekbar_progress_selected_color"
+          android:thumb="@drawable/ic_seekbar_thumb"
+          android:thumbOffset="@dimen/feedback_seekbar_thumb_offset"
+          android:thumbTint="@color/thumb_tint"
+          app:layout_constraintTop_toBottomOf="@id/tv_advice_business" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rv_numbers"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/feedback_seekbar_numbers_margin"
+          android:clipToPadding="false"
+          android:orientation="horizontal"
+          android:overScrollMode="never"
+          app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/sb_rate"
+          app:spanCount="1"
+          tools:itemCount="1"
+          tools:listitem="@layout/item_seekbar_number" />
+
+      <EditText
+          android:id="@+id/et_message"
+          style="@style/Text.Label1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/feedback_seekbar_rate_text_margin"
+          android:background="@color/box_fill"
+          android:hint="@string/hint_message"
+          android:imeOptions="actionSend"
+          android:importantForAutofill="no"
+          android:inputType="textAutoComplete"
+          android:paddingVertical="@dimen/fab_margin"
+          android:paddingStart="@dimen/feedback_rate_text_start_padding"
+          android:textColor="@color/feedback_input_text"
+          android:textColorHint="@color/main_hint"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/rv_numbers" />
+
+      <View
+          android:layout_width="0dp"
+          android:layout_height="2dp"
+          android:background="@color/box_unfocused"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/et_message" />
+
+      <View
+          android:id="@+id/view_empty_for_small_devices"
+          android:layout_width="0dp"
+          android:layout_height="@dimen/empty_view_size"
+          app:layout_constraintBottom_toTopOf="@+id/btn_approve"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/et_message" />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/btn_approve"
+          style="@style/Button.Primary"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:text="@string/button_approve"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
